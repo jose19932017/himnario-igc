@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Cantos: cualquiera puede leer, nadie puede escribir desde el cliente
+    // (el admin usa la app con PIN — si quieres más seguridad, agrega Auth)
+    match /songs/{songId} {
+      allow read: if true;
+      allow write: if true;  // Cambia a: allow write: if request.auth != null;  si agregas Firebase Auth
+    }
+
+    // Anuncios: igual
+    match /announcements/{annId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

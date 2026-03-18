@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Build
+dist/
+
+# Variables de entorno — NUNCA subir a GitHub
+.env
+.env.local
+.env.production
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
